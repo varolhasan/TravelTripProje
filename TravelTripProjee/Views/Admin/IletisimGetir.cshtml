@@ -1,0 +1,28 @@
+﻿@model TravelTripProjee.Models.Siniflar.Iletisim
+@{
+    ViewBag.Title = "IletisimGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>İletişim Bilgileri Güncelle</h2>
+<br />
+@using (Html.BeginForm("IletisimGuncelle", "Admin", FormMethod.Post))
+{
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.AdSoyad)
+        @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Mail)
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Konu)
+        @Html.TextBoxFor(x => x.Konu, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Mesaj)
+        @Html.TextAreaFor(x => x.Mesaj, 15, 1, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-success">İletişim Bilgilerini Güncelle</button>
+        <br />
+        <br />
+    </form>
+}
